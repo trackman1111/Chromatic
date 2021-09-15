@@ -5,7 +5,7 @@ using UnityEngine;
 public class MainCharacter : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private float moveSpeed = 5.0f;
+    private float moveSpeed = 9.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +20,7 @@ public class MainCharacter : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(0, 15), ForceMode2D.Impulse);
         }
     }
 }
