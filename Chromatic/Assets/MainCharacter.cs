@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class MainCharacter : MonoBehaviour
 {
+    private int jumpCounter;
     private Rigidbody2D rb;
     private float moveSpeed = 15.0f;
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        
     }
 
     // Update is called once per frame
@@ -18,9 +20,7 @@ public class MainCharacter : MonoBehaviour
         Vector2 move = new Vector2(Input.GetAxis("Horizontal"), 0);
         transform.Translate(move * Time.deltaTime * moveSpeed);
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            rb.AddForce(new Vector2(0, 15), ForceMode2D.Impulse);
-        }
     }
+
+
 }
