@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - red
+  - blue
+  - green
+  - yellow
+  - turnToRed
+  - turnToBlue
+  - turnToGreen
+  - turnToYellow
   layers:
   - Default
   - TransparentFX

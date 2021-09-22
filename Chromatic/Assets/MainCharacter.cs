@@ -6,6 +6,13 @@ public class MainCharacter : MonoBehaviour
 {
     private Rigidbody2D rb;
     private float moveSpeed = 9.0f;
+    public bool hasRed = false;
+    public bool hasBlue = false;
+    public bool hasYellow = false;
+    public bool hasGreen = false;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +28,30 @@ public class MainCharacter : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             rb.AddForce(new Vector2(0, 15), ForceMode2D.Impulse);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "red")
+        {
+            hasRed = true;
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.tag == "blue")
+        {
+            hasBlue = true;
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.tag == "green")
+        {
+            hasGreen = true;
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.tag == "yellow")
+        {
+            hasYellow = true;
+            Destroy(collision.gameObject);
         }
     }
 }
