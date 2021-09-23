@@ -4,14 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - red
-  - blue
-  - green
-  - yellow
-  - turnToRed
-  - turnToBlue
-  - turnToGreen
-  - turnToYellow
+  - Vine
   layers:
   - Default
   - TransparentFX
