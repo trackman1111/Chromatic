@@ -27,7 +27,7 @@ public class MainCharacter : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.AddForce(new Vector2(0, 15), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
         }
     }
 
