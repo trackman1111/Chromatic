@@ -20,11 +20,7 @@ public class FeetCollider : MonoBehaviour
  
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (jumpCounter != 0)
-            {
-                rb.AddForce(new Vector2(0, 15), ForceMode2D.Impulse);
-                jumpCounter--;
-            }
+            DoubleJump();
         }
     }
 
@@ -36,5 +32,32 @@ public class FeetCollider : MonoBehaviour
 
     }
 
+    void DoubleJump()
+    {
+
+        if (jumpCounter == 2 && rb.velocity.y < 0)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, 0);
+            rb.AddForce(new Vector2(0, 8), ForceMode2D.Impulse);
+            jumpCounter--;
+        }
+
+        else if (jumpCounter != 0)
+        {
+            if (jumpCounter == 1)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, 0);
+                rb.AddForce(new Vector2(0, 8), ForceMode2D.Impulse);
+                jumpCounter--;
+            }
+            else
+            {
+                rb.AddForce(new Vector2(0, 8), ForceMode2D.Impulse);
+                jumpCounter--;
+            }
+
+        }
+
+    }
 }
 
