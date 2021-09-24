@@ -6,7 +6,7 @@ public class FeetCollider : MonoBehaviour
 {
     private int jumpCounter;
     private Rigidbody2D rb;
-   
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,14 +17,10 @@ public class FeetCollider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
- 
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (jumpCounter != 0)
-            {
-                rb.AddForce(new Vector2(0, 15), ForceMode2D.Impulse);
-                jumpCounter--;
-            }
+            DoubleJump();
         }
     }
 
@@ -36,5 +32,24 @@ public class FeetCollider : MonoBehaviour
 
     }
 
-}
+    void DoubleJump()
+    {
 
+
+
+
+        if (jumpCounter != 0)
+        {
+
+            rb.velocity = new Vector2(rb.velocity.x, 0);
+            rb.AddForce(new Vector2(0, 8), ForceMode2D.Impulse);
+            jumpCounter--;
+
+
+
+
+
+        }
+
+    }
+}
