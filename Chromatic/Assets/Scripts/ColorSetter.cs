@@ -16,7 +16,7 @@ public class ColorSetter : MonoBehaviour
     {
         if (gameObject.tag == "turnToRed")
         {
-            color = GameObject.Find("Circle").GetComponent<MainCharacter>().hasRed;
+            color = GameObject.Find("Circle").GetComponent<Movement>().hasRed;
             if (color == true)
             {
                 GetComponent<Renderer>().material.color = Color.red;
@@ -24,7 +24,7 @@ public class ColorSetter : MonoBehaviour
         }
         if (gameObject.tag == "turnToBlue")
         {
-            color = GameObject.Find("Circle").GetComponent<MainCharacter>().hasBlue;
+            color = GameObject.Find("Circle").GetComponent<Movement>().hasBlue;
             if (color == true)
             {
                 GetComponent<Renderer>().material.color = Color.blue;
@@ -32,7 +32,7 @@ public class ColorSetter : MonoBehaviour
         }
         if (gameObject.tag == "turnToGreen")
         {
-            color = GameObject.Find("Circle").GetComponent<MainCharacter>().hasGreen;
+            color = GameObject.Find("Circle").GetComponent<Movement>().hasGreen;
             if (color == true)
             {
                 GetComponent<Renderer>().material.color = Color.green;
@@ -40,7 +40,7 @@ public class ColorSetter : MonoBehaviour
         }
         if (gameObject.tag == "turnToYellow")
         {
-            color = GameObject.Find("Circle").GetComponent<MainCharacter>().hasYellow;
+            color = GameObject.Find("Circle").GetComponent<Movement>().hasYellow;
             if (color == true)
             {
                 GetComponent<Renderer>().material.color = Color.yellow;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class MainCharacter : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     private Rigidbody2D rb;
     private float moveSpeed = 9.0f;
