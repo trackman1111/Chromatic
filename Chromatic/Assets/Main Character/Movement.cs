@@ -17,7 +17,7 @@ public class Movement : MonoBehaviour
     public Sprite vine;
     public Tilemap background;
     private Vector2 move;
-
+    private ScriptableObject jump;
 
 
     // Start is called before the first frame update
@@ -35,11 +35,14 @@ public class Movement : MonoBehaviour
         float xSpeed = Input.GetAxis("Horizontal");
         float ySpeed = Input.GetAxis("Vertical");
 
+        
 
+        // If space is clicked, then it will call FeetCollider.cs' Update()
         if (Input.GetKeyDown(KeyCode.Space) && !climbing)
         {
-            rb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
+            this.transform.GetChild(0).GetComponent<FeetCollider>().Update();
         }
+        
         if (currentSprite != null && currentSprite.Equals(vine) && !climbing)
         {
             climbing = true;
