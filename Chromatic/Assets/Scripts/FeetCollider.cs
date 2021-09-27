@@ -40,7 +40,7 @@ public class FeetCollider : MonoBehaviour
         {
             // Sets Y velocity to 0 to allow the same DoubleJump Impulse
             rb.velocity = new Vector2(rb.velocity.x, 0);
-            rb.AddForce(new Vector2(0, 8), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
             jumpCounter--;
         }
     }
