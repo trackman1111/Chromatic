@@ -4,18 +4,11 @@ using UnityEngine;
 
 public class Launcher : MonoBehaviour
 {
-    [Header("case sensitive left or right")]
-    [SerializeField] string direction = "left";
     [SerializeField] GameObject projectile;
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float timeBetweenShots = 2f;
     float shotCounter;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        Fire();
-    }
+    [SerializeField] GameObject MainCharacter;
 
     // Update is called once per frame
     void Update()
@@ -31,14 +24,15 @@ public class Launcher : MonoBehaviour
     private void Fire()
     {
         GameObject launchedProjectile = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
-        if (direction == "left")
+        // Shoot Right
+        if (this.transform.position.x > MainCharacter.transform.position.x)
         {
             launchedProjectile.GetComponent<Rigidbody2D>().velocity = new Vector2(-projectileSpeed, 0);
         }
-        if (direction == "right")
+        // Shoot Left
+        if (this.transform.position.x < MainCharacter.transform.position.x)
         {
             launchedProjectile.GetComponent<Rigidbody2D>().velocity = new Vector2(projectileSpeed, 0);
         }
-        // AudioSource.PlayClipAtPoint(laserSound, Camera.main.transform.position, laserVolume);
     }
 }
