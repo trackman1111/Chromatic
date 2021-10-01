@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab533b50a91da5c4cbafb72cf8fc0b13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 0}
+  projectile: {fileID: 7038162657480392784, guid: 083e407f4362255489679ed88713f3f3, type: 3}
   projectileSpeed: 10
   timeBetweenShots: 2
   MainCharacter: {fileID: 0}

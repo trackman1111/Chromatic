@@ -16,6 +16,10 @@ public class Launcher : MonoBehaviour
         shotCounter -= Time.deltaTime;
         if (shotCounter <= 0f)
         {
+            if (!MainCharacter)
+            {
+                return;
+            }
             Fire();
             shotCounter = timeBetweenShots;
         }

@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 5363669284170043967}
   - component: {fileID: 345467560804449068}
   - component: {fileID: 4419279519226769969}
+  - component: {fileID: -8483354754919946515}
+  - component: {fileID: -3511284213677679184}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -148,3 +150,29 @@ MonoBehaviour:
   moveXLeft: 3
   moveSpeed: 2
   direction: left
+--- !u!114 &-8483354754919946515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534941734827545512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdc193ab3261eba4d8a95fd8e1948ed3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+--- !u!114 &-3511284213677679184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534941734827545512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb13d5e312effae4e80bea877cbd7538, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
