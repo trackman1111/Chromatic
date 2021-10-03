@@ -12,7 +12,7 @@ public class DamageDealer : MonoBehaviour
         return damage;
     }
 
-    public string getIdentifier()
+    public string GetIdentifier()
     {
         return identifier;
     }

@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    void OnCollisionEnter2D(Collision2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        //if (other.gameObject.GetComponent<Health>().getIdentifier() 
-        //== gameObject.GetComponent<DamageDealer>().getIdentifier())
-       // {
-        //    return;
-        //}
+        if (other.gameObject.GetComponent<Health>().GetIdentifier() 
+        == gameObject.GetComponent<DamageDealer>().GetIdentifier())
+        {
+            return;
+        }
         Destroy(gameObject);
     }
 }
