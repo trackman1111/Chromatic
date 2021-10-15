@@ -123,6 +123,101 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &332315516
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 345467560804449068, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 345467560804449068, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534941734827545512, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
+      propertyPath: m_Name
+      value: Flying Square
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534941734827545512, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
+      propertyPath: m_TagString
+      value: Flying Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679171359471549083, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679171359471549083, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679171359471549083, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679171359471549083, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.106479
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679171359471549083, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679171359471549083, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679171359471549083, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679171359471549083, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679171359471549083, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679171359471549083, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679171359471549083, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419279519226769969, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
+      propertyPath: flapSpeed
+      value: 2.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419279519226769969, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
+      propertyPath: moveSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419279519226769969, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
+      propertyPath: moveXLeft
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419279519226769969, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
+      propertyPath: moveXRight
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363669284170043967, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363669284170043967, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
+      propertyPath: m_GravityScale
+      value: 0.1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -8483354754919946515, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
+    - {fileID: -3511284213677679184, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
 --- !u!1 &336778420
 GameObject:
   m_ObjectHideFlags: 0
@@ -5595,6 +5690,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1876826287 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1534941734827545512, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
+  m_PrefabInstance: {fileID: 332315516}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1876826288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876826287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb13d5e312effae4e80bea877cbd7538, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  identifier: enemy
+--- !u!114 &1876826289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876826287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdc193ab3261eba4d8a95fd8e1948ed3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  identifier: enemy
+  immunityTimer: 2
 --- !u!1001 &2050216911
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5743,6 +5872,10 @@ PrefabInstance:
     - target: {fileID: 3679171359471549083, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419279519226769969, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4419279519226769969, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
       propertyPath: moveSpeed
