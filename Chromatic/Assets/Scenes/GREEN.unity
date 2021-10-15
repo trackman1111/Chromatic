@@ -143,6 +143,10 @@ PrefabInstance:
       value: Flying Square
       objectReference: {fileID: 0}
     - target: {fileID: 1534941734827545512, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534941734827545512, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
       propertyPath: m_TagString
       value: Flying Enemy
       objectReference: {fileID: 0}
@@ -192,7 +196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4419279519226769969, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
       propertyPath: flapSpeed
-      value: 2.1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4419279519226769969, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
       propertyPath: moveSpeed
@@ -4241,6 +4245,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Circle
       objectReference: {fileID: 0}
+    - target: {fileID: 3911604002342514758, guid: 2677c427778904683b683d0a58d3dd14, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 3911604002342514778, guid: 2677c427778904683b683d0a58d3dd14, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
@@ -5554,7 +5562,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
-  identifier: enemy
   immunityTimer: 2
 --- !u!114 &1357609039
 MonoBehaviour:
@@ -5569,7 +5576,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  identifier: enemy
 --- !u!1 &1390914867
 GameObject:
   m_ObjectHideFlags: 0
@@ -5644,7 +5650,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
-  identifier: player
   immunityTimer: 3
 --- !u!1 &1849963046
 GameObject:
@@ -5708,7 +5713,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  identifier: enemy
 --- !u!114 &1876826289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5722,7 +5726,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
-  identifier: enemy
   immunityTimer: 2
 --- !u!1001 &2050216911
 PrefabInstance:
@@ -5747,9 +5750,17 @@ PrefabInstance:
       propertyPath: MainCharacter
       value: 
       objectReference: {fileID: 1761379449}
+    - target: {fileID: -2006737713872410875, guid: 9284e571dce404f4988b8ed0ac738315, type: 3}
+      propertyPath: timeBetweenShots
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1534941734827545512, guid: 9284e571dce404f4988b8ed0ac738315, type: 3}
       propertyPath: m_Name
       value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534941734827545512, guid: 9284e571dce404f4988b8ed0ac738315, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 3679171359471549083, guid: 9284e571dce404f4988b8ed0ac738315, type: 3}
       propertyPath: m_RootOrder
@@ -5828,6 +5839,14 @@ PrefabInstance:
     - target: {fileID: 1534941734827545512, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
       propertyPath: m_Name
       value: Square
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534941734827545512, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534941734827545512, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 3679171359471549083, guid: 699ce18a1b871bf47b25373bfbccfa49, type: 3}
       propertyPath: m_RootOrder

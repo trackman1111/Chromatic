@@ -5,7 +5,6 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] int health = 3;
-    [SerializeField] string identifier = "enemy";
     [Header("Only Effects Player")]
     [SerializeField] float immunityTimer = 2f;
 
@@ -15,7 +14,7 @@ public class Health : MonoBehaviour
     {
         DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
 
-        if(!damageDealer || identifier == damageDealer.GetIdentifier())
+        if(!damageDealer || gameObject.tag == other.gameObject.tag)
         {
             return;
         }
@@ -26,17 +25,17 @@ public class Health : MonoBehaviour
     {
         DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
 
-        if(!damageDealer || identifier == damageDealer.GetIdentifier())
+        if(!damageDealer || gameObject.tag == other.gameObject.tag)
         {
             return;
         }
         
-        if (identifier == "enemy")
+        if (gameObject.tag == "Enemy" || gameObject.tag == "Flying Enemy")
         {
             ProcessHit(damageDealer.GetDamage());
         }
 
-        if(identifier == "player" && !playerHit)
+        if(gameObject.tag == "Player" && !playerHit)
         {
             playerHit = true;
             ProcessHit(damageDealer.GetDamage());
@@ -44,9 +43,8 @@ public class Health : MonoBehaviour
             return;
         }
 
-        if(identifier == "player" && playerHit)
+        if(gameObject.tag == "Player" && playerHit)
         {
-            print("playerCollision");
             return;
         }
     }
@@ -64,11 +62,6 @@ public class Health : MonoBehaviour
         {
             return;
         }
-    }
-
-    public string GetIdentifier()
-    {
-        return identifier;
     }
 
     IEnumerator PlayerImmunity()

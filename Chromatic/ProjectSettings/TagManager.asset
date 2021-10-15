@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Vine
   - Flying Enemy
+  - Enemy
   layers:
   - Default
   - TransparentFX

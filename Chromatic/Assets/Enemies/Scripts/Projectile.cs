@@ -6,8 +6,8 @@ public class Projectile : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.GetComponent<Health>().GetIdentifier() 
-        == gameObject.GetComponent<DamageDealer>().GetIdentifier())
+        if (other.gameObject.tag 
+        == gameObject.tag)
         {
             return;
         }
