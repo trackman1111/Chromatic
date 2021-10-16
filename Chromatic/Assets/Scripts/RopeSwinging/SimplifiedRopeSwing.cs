@@ -32,12 +32,12 @@ public class SimplifiedRopeSwing : MonoBehaviour
     float winchSpeed = 2f;
 
     //The joint we use to approximate the rope
-    SpringJoint springJoint;
+    SpringJoint2D springJoint;
 
     // Start is called before the first frame update
     void Start()
     {
-        springJoint = objectTheRopeIsConnectedTo.GetComponent<SpringJoint>();
+        springJoint = objectTheRopeIsConnectedTo.GetComponent<SpringJoint2D>();
 
         //Init the line renderer we use to display the rope
         lineRenderer = GetComponent<LineRenderer>();
@@ -46,7 +46,7 @@ public class SimplifiedRopeSwing : MonoBehaviour
         UpdateSpring();
 
         //Add the weight to what the rope is carrying
-        objectThatIsHangingFromTheRope.GetComponent<Rigidbody>().mass = loadMass;
+        objectThatIsHangingFromTheRope.GetComponent<Rigidbody2D>().mass = loadMass;
 
 
     }
@@ -91,11 +91,11 @@ public class SimplifiedRopeSwing : MonoBehaviour
         float kRope = ropeForce / 0.01f;
 
         //Add the value to the spring
-        springJoint.spring = kRope * 1.0f;
-        springJoint.damper = kRope * 0.8f;
+        //For 3D: springJoint.spring = kRope * 1.0f;
+        springJoint.dampingRatio = kRope * 0.8f;
 
         //Update the length of the rope
-        springJoint.maxDistance = ropeLength;
+        //For 3D: springJoint.distance = ropeLength;
 
     }
 
