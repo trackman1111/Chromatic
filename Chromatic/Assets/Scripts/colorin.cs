@@ -5,33 +5,43 @@ using UnityEngine;
 public class colorin : MonoBehaviour
 {
     //Press E to fill in the color
-    //collision.attachedRigidbody.velocity = new Vector2(0, 0);
+    //The player will be moved to a position (the trigger box of the public GameObject 'moveto'), and then the shape will be filled in.
+    //Components needed: An object with a trigger box (this object). A child object with a trigger box (the 'moveto' object. Will also have the 'detectcolorin' script). A child object (the object that is colored in, and the 'colored object' object.)
 
     private Vector2 pos;
     private Quaternion rot;
-    private float BoxSize;
-    private float BoxOffset;
     private Vector2 playerpos;
+    //triggerarea tests if the player is in the trigger area
     private bool triggerarea;
+    //done tests if the shape has been filled in (so that the script can only run once)
     private bool done;
+    //filling tests if player is in the act of filling and has pressed E
     private bool filling;
     private Vector2 movepos;
     private Rigidbody2D player;
+    private float gravscale;
+    private float distance_x;
+    private Vector2 lastplayerpos;
+    private float counting;
 
     public GameObject coloredobject;
-    public float movespeed;
+    public float movespeed = 1;
+    public GameObject moveto;
+    //moved will be inputted from the 'detectcolorin' script placed in a seperate object with a trigger. moved tests if the player is in the trigger area of where it is moving to.
+    public bool moved = false;
+
+    //To disable Player movement (requires changes to main character script to implement)
+    public bool playercontrol;
 
     // Start is called before the first frame update
     void Start()
     {
         pos = transform.position;
         rot = transform.rotation;
-        BoxSize = gameObject.GetComponent<BoxCollider2D>().size.x;
-        BoxOffset = gameObject.GetComponent<BoxCollider2D>().offset.x;
 
         //Because will later divide by movespeed
         movespeed = movespeed / 10;
-        movepos = gameObject.GetComponentInChildren<Transform>().position;
+        movepos = moveto.GetComponent<Transform>().position;
 
         filling = false;
         done = false;
@@ -40,15 +50,55 @@ public class colorin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (triggerarea == true && Input.GetKeyDown(KeyCode.E))
+        if (done == false)
         {
-            while (playerpos != movepos)
+            //This if statement fixes annoying error messages
+            if (player != null)
             {
+                playerpos = player.position;
+            }
 
-                ColorFillIn(player);
+
+            if (triggerarea == true && Input.GetKeyDown(KeyCode.E))
+            {
+                filling = true;
+            }
+
+            if (filling == true && moved == false)
+            {
+                
+                playercontrol = false;
+                //using 0.9f*gravscale to help with friction issues
+                player.velocity = (new Vector2(movespeed * distance_x, 0.2f*gravscale));
+
+                //There was a weird glitch where sometimes the circle will just stop and the velocity won't move it or anything.
+                //Because of this, I added the timer below. It basically just raises the position by 0.01f/s to update the position (you can't even tell because of gravity.)
+                if (counting < (Time.time - 1))
+                {
+                    player.position = new Vector2(playerpos.x, playerpos.y + 0.01f);
+                    counting = 0;
+                }
+
+                if (counting == 0)
+                {
+                    counting = Time.time;
+                }
+
 
             }
+
+            if (filling == true && moved == true)
+            {
+                //
+                player.velocity = Vector2.zero;
+                coloredobject.transform.position = pos;
+                coloredobject.transform.rotation = rot;
+                playercontrol = true;
+                done = true;
+
+            }
+
+
         }
 
     }
@@ -62,7 +112,10 @@ public class colorin : MonoBehaviour
         if (collision.tag == "Player")
         {
             player = collision.GetComponent<Rigidbody2D>();
+            gravscale = player.gravityScale;
             triggerarea = true;
+            distance_x = movepos.x - playerpos.x;
+            distance_x = AddSpeed(distance_x);
         }
     }
 
@@ -74,51 +127,18 @@ public class colorin : MonoBehaviour
         }
     }
 
-
-    private void OnTriggerStay2D(Collider2D collision)
+    private float AddSpeed(float distance)
     {
-
-
-
-        if (collision.tag == "Player" && Input.GetKeyDown(KeyCode.E))
+        if (distance < 0)
         {
-
-            print("test");
-            coloredobject.transform.position = pos;
-            coloredobject.transform.rotation = rot;
-            //ColorFillIn(collision);
-
+            distance = distance - 1;
+        }
+        if (distance > 0)
+        {
+            distance = distance + 1;
         }
 
-        if (playerpos == movepos && filling == true && done == false)
-        {
-
-            //Moves the colored object to the dotted-line object
-            coloredobject.transform.position = pos;
-            coloredobject.transform.rotation = rot;
-
-            //So that OnTriggerStay2D won't test for pressing E anymore
-            done = true;
-
-        }
-
-    }
-
-    private void ColorFillIn(Rigidbody2D player)
-    {
-        Vector2 playerpos;
-        float distance_x;
-        float distance_y;
-
-        playerpos = player.GetComponent<Transform>().position;
-
-        //distances
-        distance_x = movepos.x - playerpos.x;
-        distance_y = movepos.y - playerpos.y;
-
-        player.transform.position = playerpos + (new Vector2 (distance_x*movespeed,distance_y*movespeed));
-        filling = true;
-
+        return distance;
     }
 
 }

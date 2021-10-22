@@ -70,7 +70,7 @@ MonoBehaviour:
   - {x: -0.70278317, y: -2.462977, z: 0}
   m_ShapePathHash: 1123009820
   m_Mesh: {fileID: 0}
-  m_InstanceId: -41756
+  m_InstanceId: 48166
 --- !u!1001 &8582888285513414158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -84,7 +84,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 8309381240761732957, guid: 20589afec55c4684eb3c1708d939b23c, type: 3}
       propertyPath: m_Name
-      value: Tree with Collider
+      value: Tree Shadow Caster
       objectReference: {fileID: 0}
     - target: {fileID: 8309381240761732959, guid: 20589afec55c4684eb3c1708d939b23c, type: 3}
       propertyPath: m_RootOrder
@@ -92,11 +92,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8309381240761732959, guid: 20589afec55c4684eb3c1708d939b23c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 34.743046
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8309381240761732959, guid: 20589afec55c4684eb3c1708d939b23c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.121001
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8309381240761732959, guid: 20589afec55c4684eb3c1708d939b23c, type: 3}
       propertyPath: m_LocalPosition.z
