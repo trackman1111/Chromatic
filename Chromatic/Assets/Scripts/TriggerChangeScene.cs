@@ -6,7 +6,7 @@ public class TriggerChangeScene : MonoBehaviour
 {
     //Apply this script to the Detection box
     //The player must have the Player tag for this to work
-    //SceneName is the scene you want to change to, and CurrentScene simply stores the current scene you are in.
+    //SceneName is the scene you want to change to, and CurrentScene simply stores the current scene you are in (It's unnecessary, but may be useful later).
     public string SceneName;
     string CurrentScene;
 
@@ -27,7 +27,7 @@ public class TriggerChangeScene : MonoBehaviour
 
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         //NOTE TO SELF: Box CANNOT be have Trigger checked.
         if (collision.gameObject.tag == "Player")

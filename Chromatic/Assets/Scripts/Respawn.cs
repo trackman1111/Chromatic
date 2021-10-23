@@ -7,6 +7,7 @@ public class Respawn : MonoBehaviour
 
     Vector2 position;
     Quaternion rotation;
+    public float KillLevelYPos;
 
     // Start is called before the first frame update
     void Start()
@@ -21,11 +22,12 @@ public class Respawn : MonoBehaviour
     void Update()
     {
 
-        if (transform.position.y <= -30)
+        if (transform.position.y <= KillLevelYPos)
         {
 
             transform.position = position;
             transform.rotation = rotation;
+            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         
         }
 
