@@ -37,10 +37,16 @@ public class Movement : MonoBehaviour
 
         
 
-        // If space is clicked, then it will call FeetCollider.cs' Update()
+
+        if (Input.GetKeyDown(KeyCode.F)){
+            this.transform.GetChild(0).GetComponent<PlayerAttack>();
+        }
+
+
         if (Input.GetKeyDown(KeyCode.Space) && !climbing)
         {
-            this.transform.GetChild(0).GetComponent<FeetCollider>().Update();
+            // Calls FeetCollider.cs and allows double jump.
+            this.transform.GetChild(0).GetComponent<FeetCollider>();
         }
         
         if (currentSprite != null && currentSprite.Equals(vine) && !climbing)
