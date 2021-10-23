@@ -15,9 +15,9 @@ public class FeetCollider : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+   void Update()
     {
-
+        
         if (Input.GetKeyDown(KeyCode.Space))
         {
             DoubleJump();
@@ -28,27 +28,18 @@ public class FeetCollider : MonoBehaviour
     {
         // Resets jump for the collider off the feet
 
-        jumpCounter = 2;
+        jumpCounter = 2; 
 
     }
 
     void DoubleJump()
     {
-
-
-
-
         if (jumpCounter != 0)
         {
 
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(new Vector2(0, 8), ForceMode2D.Impulse);
             jumpCounter--;
-
-
-
-
-
         }
 
     }

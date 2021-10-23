@@ -17,7 +17,7 @@ public class Movement : MonoBehaviour
     public Sprite vine;
     public Tilemap background;
     private Vector2 move;
-
+    private ScriptableObject jump;
 
 
     // Start is called before the first frame update
@@ -35,11 +35,20 @@ public class Movement : MonoBehaviour
         float xSpeed = Input.GetAxis("Horizontal");
         float ySpeed = Input.GetAxis("Vertical");
 
+        
+
+
+        if (Input.GetKeyDown(KeyCode.F)){
+            this.transform.GetChild(0).GetComponent<PlayerAttack>();
+        }
+
 
         if (Input.GetKeyDown(KeyCode.Space) && !climbing)
         {
-            rb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
+            // Calls FeetCollider.cs and allows double jump.
+            this.transform.GetChild(0).GetComponent<FeetCollider>();
         }
+        
         if (currentSprite != null && currentSprite.Equals(vine) && !climbing)
         {
             climbing = true;
