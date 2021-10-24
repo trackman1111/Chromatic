@@ -22,7 +22,7 @@ public class Health : MonoBehaviour
     }
 
         void OnTriggerEnter2D(Collider2D other)
-    {
+        {
         DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
 
         if(!damageDealer || gameObject.tag == other.gameObject.tag)

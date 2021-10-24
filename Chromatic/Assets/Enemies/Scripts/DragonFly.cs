@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DragonFly : MonoBehaviour
 {
-    public GameObject mainCharacter;
+    private GameObject mainCharacter;
     [SerializeField] float moveXRight = 5f;
     [SerializeField] float moveXLeft = 5f;
     [SerializeField] float moveSpeed = 4f;
@@ -16,6 +16,7 @@ public class DragonFly : MonoBehaviour
     Vector3 moveDistanceRight; 
     Vector3 moveDistanceLeft; 
     private Rigidbody2D rb;
+    private SpriteRenderer sr;
 
     // flying variables
     private bool flying = false;
@@ -35,6 +36,7 @@ public class DragonFly : MonoBehaviour
     {
         mainCharacter = GameObject.FindWithTag("Player");
         rb = gameObject.GetComponent<Rigidbody2D>();
+        sr = gameObject.GetComponent<SpriteRenderer>();
         gravScale = rb.gravityScale;
 
         moveDistanceRight = new Vector3(moveXRight, 0, 0);
@@ -134,6 +136,7 @@ public class DragonFly : MonoBehaviour
             if (transform.position.x >= waypointRight.x)
             {
                 direction = "left";
+                sr.flipX = false;
             }
         }
 
@@ -144,6 +147,8 @@ public class DragonFly : MonoBehaviour
             if (transform.position.x <= waypointLeft.x)
             {
                 direction = "right";
+                sr.flipX = true;
+                sr.flipX = true;
             }
         }
     }

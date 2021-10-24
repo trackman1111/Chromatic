@@ -15,14 +15,6 @@ public class FeetCollider : MonoBehaviour
     }
 
     // Update is called once per frame
-   void Update()
-    {
-        
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            DoubleJump();
-        }
-    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -32,8 +24,9 @@ public class FeetCollider : MonoBehaviour
 
     }
 
-    void DoubleJump()
+    public void DoubleJump()
     {
+        print(jumpCounter);
         if (jumpCounter != 0)
         {
 
