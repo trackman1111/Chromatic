@@ -31,6 +31,7 @@ public class DragonFly : MonoBehaviour
     private bool moveTowardsStart = true;
     private bool diveWait = true;
     private bool diveWaitDone = false;
+    private bool playerInRange = false;
 
     void Start()
     {
@@ -58,7 +59,7 @@ public class DragonFly : MonoBehaviour
     {
         if (flying)
         {
-            if(diving)
+            if(diving && playerInRange)
             {                
                 rb.gravityScale = 0;
                 rb.velocity = new Vector2(0, 0);
@@ -111,11 +112,20 @@ public class DragonFly : MonoBehaviour
                 }
             }
 
-            if (!diving)
+            else
             {
+                playerPosition = mainCharacter.transform.position;
                 if (transform.position.y < waypointRight.y - .5f)
                 {
                     rb.velocity = new Vector2(0, flapSpeed);
+                    if (this.transform.position.x + 4f > playerPosition.x && this.transform.position.x - 4f < playerPosition.x)
+                    {
+                        playerInRange = true;
+                    }
+                    else
+                    {
+                        playerInRange = false;
+                    }
                 }
                 UpdateX();
             }
