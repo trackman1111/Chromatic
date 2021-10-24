@@ -45,7 +45,10 @@ public class FreezeCam : MonoBehaviour
             {
 
                 GameObject.Find("Main Camera").GetComponent<CameraFollow>().following = true;
-
+                if (block != null)
+                {
+                    block.transform.position = blockpos;
+                }
                 done = true;
 
             }
