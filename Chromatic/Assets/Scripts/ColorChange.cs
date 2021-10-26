@@ -8,14 +8,12 @@ namespace UnityEngine.Rendering
     {
         //UNCHECK the Color Adjustments override used by the volume.
         public Volume selvolume;
-        public bool Coloring = false;
+        public bool Coloring;
         private ColorAdjustments ColAdj;
-        public float speed = 1;
+        private readonly float SPEED = .03f;
         // Start is called before the first frame update
         void Start()
         {
-            speed = speed * 0.01f;
-
             ColAdj = ScriptableObject.CreateInstance<ColorAdjustments>();
             ColAdj.saturation.overrideState = true;
             ColAdj.saturation.value = -100;
@@ -30,12 +28,14 @@ namespace UnityEngine.Rendering
             if (Coloring == true && ColAdj.saturation.value < 0)
             {
                 
-                ColAdj.saturation.value += speed;
+                ColAdj.saturation.value += SPEED;
 
             }
 
 
         }
+
     }
+
 
 }

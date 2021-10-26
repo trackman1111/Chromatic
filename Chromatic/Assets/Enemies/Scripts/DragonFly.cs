@@ -148,7 +148,6 @@ public class DragonFly : MonoBehaviour
             {
                 direction = "right";
                 sr.flipX = true;
-                sr.flipX = true;
             }
         }
     }

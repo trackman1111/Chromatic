@@ -15,6 +15,10 @@ public class Enemy : MonoBehaviour
     Vector3 moveDistanceRight; 
     Vector3 moveDistanceLeft;
 
+    private SpriteRenderer sr;
+
+
+
     void Start()
     {
 
@@ -22,6 +26,7 @@ public class Enemy : MonoBehaviour
         moveDistanceLeft = new Vector3(moveXLeft, 0, 0);
         waypointRight = this.transform.position + moveDistanceRight;
         waypointLeft = this.transform.position - moveDistanceLeft;
+        sr = gameObject.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -38,6 +43,7 @@ public class Enemy : MonoBehaviour
 
             if (transform.position.x >= waypointRight.x)
             {
+                sr.flipX = false;
                 direction = "left";
             }
         }
@@ -48,6 +54,7 @@ public class Enemy : MonoBehaviour
 
             if (transform.position.x <= waypointLeft.x)
             {
+                sr.flipX = true;
                 direction = "right";
             }
         }

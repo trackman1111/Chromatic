@@ -21,8 +21,8 @@ public class Health : MonoBehaviour
         ProcessHit(damageDealer.GetDamage());
     }
 
-        void OnTriggerEnter2D(Collider2D other)
-        {
+    void OnTriggerEnter2D(Collider2D other)
+    {
         DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
 
         if(!damageDealer || gameObject.tag == other.gameObject.tag)
