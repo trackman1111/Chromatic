@@ -10,6 +10,13 @@ public class Health : MonoBehaviour
 
     bool playerHit = false;
 
+    private Vector3 startpos;
+
+    private void Start()
+    {
+        startpos = gameObject.transform.position;
+    }
+
     void OnCollisionEnter2D(Collision2D other)
     {
         DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
@@ -53,15 +60,18 @@ public class Health : MonoBehaviour
     {
         health -= damage;
 
-        if (health <= 0)
+        if (health <= 0 && tag != "Player")
         {
             Destroy(gameObject);
+            
         }
 
-        else
+        else if (health <= 0 && tag == "Player")
         {
-            return;
+            gameObject.transform.position = startpos;
+            health = 3;
         }
+
     }
 
     IEnumerator PlayerImmunity()
