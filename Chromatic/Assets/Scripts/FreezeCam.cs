@@ -44,11 +44,7 @@ public class FreezeCam : MonoBehaviour
             if (collision.gameObject.tag == "Player" && UndoFreeze == true)
             {
 
-                GameObject.Find("Main Camera").GetComponent<CameraFollow>().following = true;
-                if (block != null)
-                {
-                    block.transform.position = blockpos;
-                }
+                UnFreeze();
                 done = true;
 
             }
@@ -66,6 +62,15 @@ public class FreezeCam : MonoBehaviour
         GameObject.Find("Main Camera").GetComponent<CameraFollow>().freezepos = freezepos;
         GameObject.Find("Main Camera").GetComponent<CameraFollow>().following = false;
 
+    }
+
+    public void UnFreeze()
+    {
+        GameObject.Find("Main Camera").GetComponent<CameraFollow>().following = true;
+        if (block != null)
+        {
+            Destroy(block);
+        }
     }
 
 

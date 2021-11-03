@@ -17,7 +17,7 @@ public class Water_Rise : MonoBehaviour
     {
         water = gameObject;
 
-        speed = speed * 0.1f;
+        speed = speed * 0.01f;
         distance = new Vector3(waterpos.x - water.transform.position.x, waterpos.y - water.transform.position.y, waterpos.z);
         //Automatically moves to the z position so it moves from invisible to visible range
     }
@@ -25,7 +25,7 @@ public class Water_Rise : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (rise == true && waterpos != water.transform.position)
+        if (rise == true && waterpos.y >= water.transform.position.y)
         {
             //moves towards the goal position. Automatically moves to the z position so it moves from invisible to visible range
             water.transform.position = new Vector3(water.transform.position.x, water.transform.position.y, waterpos.z);
