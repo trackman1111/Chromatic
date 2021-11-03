@@ -10,7 +10,7 @@ public class Health : MonoBehaviour
 
     bool playerHit = false;
 
-    private Vector3 startpos;
+    public Vector3 startpos;
 
     private void Start()
     {
