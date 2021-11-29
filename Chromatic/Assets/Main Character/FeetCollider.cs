@@ -13,7 +13,7 @@ public class FeetCollider : MonoBehaviour
     {
         jumpCounter = 2;
         rb = transform.parent.gameObject.GetComponent<Rigidbody2D>();
-        am = GetComponent<Animator>();
+        am = transform.parent.gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
