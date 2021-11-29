@@ -58,6 +58,7 @@ public class Movement : MonoBehaviour
             climbing = true;
             rb.gravityScale = 0;
             rb.velocity = new Vector2(0, 0);
+            am.SetInteger("Current", 0);
         }
         else if (climbing && (currentSprite == null || !currentSprite.Equals(vine)))
         {
