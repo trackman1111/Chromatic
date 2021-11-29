@@ -51,10 +51,7 @@ public class Movement : MonoBehaviour
             this.transform.GetChild(0).GetComponent<FeetCollider>().DoubleJump();
             am.SetInteger("Current", 1);
         }
-        else
-        {
-            am.SetInteger("Current", 0);
-        }
+  
         
         if (currentSprite != null && currentSprite.Equals(vine) && !climbing)
         {

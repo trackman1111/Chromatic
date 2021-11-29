@@ -6,12 +6,14 @@ public class FeetCollider : MonoBehaviour
 {
     private int jumpCounter;
     private Rigidbody2D rb;
+    private Animator am;
 
     // Start is called before the first frame update
     void Start()
     {
         jumpCounter = 2;
         rb = transform.parent.gameObject.GetComponent<Rigidbody2D>();
+        am = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -19,9 +21,9 @@ public class FeetCollider : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Resets jump for the collider off the feet
-
-        jumpCounter = 2; 
-
+        
+        jumpCounter = 2;
+        am.SetInteger("Current", 0);
     }
 
     public void DoubleJump()
