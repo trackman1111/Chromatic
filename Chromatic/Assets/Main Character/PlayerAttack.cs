@@ -10,15 +10,24 @@ public class PlayerAttack : MonoBehaviour
     public float attackRange;
     public LayerMask whatisEnemies;
     public int damage;
+    private float moveInput;
+    private int lastInput;
     // Start is called before the first frame update
     void Start()
     {
-        
+        moveInput = 1;
+        lastInput = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Takes horizontal speed of gameobject
+        moveInput = Input.GetAxis("Horizontal");
+
+        //calls flip method
+        Flip(moveInput);
+
         if (timeBtwAttack <= 0)
         {
             if (Input.GetKey(KeyCode.F))
@@ -47,4 +56,45 @@ public class PlayerAttack : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackpos.position, attackRange);
     }
+
+
+    // is called to move the attack hitbox to face direction of main char
+    void Flip(float horizontalInput)
+    {
+
+        // if movement is positive, set the hitbox to the right of the character
+        if (horizontalInput > 0)
+        {
+            attackpos.localPosition = new Vector3(attackpos.localPosition.x, 0);
+            lastInput = 1;
+
+        }
+
+        // if movement is negative, set it to the left of the character
+        else if (horizontalInput < 0)
+        {
+            attackpos.localPosition = new Vector3(-attackpos.localPosition.x, 0);
+            lastInput = 2;
+
+        }
+        // if character jumped, take last input and keep the hitbox there
+        else if (Input.GetAxis("Vertical") != 0)
+        {
+            if (lastInput == 1)
+            {
+                attackpos.localPosition = new Vector3(attackpos.localPosition.x, 0);
+            }
+            else if (lastInput == 2)
+            {
+                attackpos.localPosition = new Vector3(-attackpos.localPosition.x, 0);
+            }
+
+        }
+
+    }
+
 }
+
+
+
+
