@@ -19,12 +19,8 @@ public class Movement : MonoBehaviour
     private Vector2 move;
     private ScriptableObject jump;
     private Animator am;
-<<<<<<< HEAD
     private SpriteRenderer sr;
-=======
     public int KillsForUnfreeze;
-
->>>>>>> main
 
     // Start is called before the first frame update
     void Start()
@@ -46,8 +42,8 @@ public class Movement : MonoBehaviour
         // if the A key was pressed this frame
         if (Input.GetKeyDown(KeyCode.A))
         {
-                           sr.flipX = true;
-                   }
+            sr.flipX = true;
+        }
 
         // if the A key was pressed this frame
         if (Input.GetKeyDown(KeyCode.D))

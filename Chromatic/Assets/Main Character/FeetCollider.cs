@@ -24,14 +24,14 @@ public class FeetCollider : MonoBehaviour
         
         jumpCounter = 2;
         am.SetInteger("Current", 0);
+        am.SetInteger("DoubleJump", 0);
     }
 
     public void DoubleJump()
     {
-        print(jumpCounter);
         if (jumpCounter != 0)
         {
-
+            am.SetInteger("DoubleJump", 1);
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(new Vector2(0, 8), ForceMode2D.Impulse);
             jumpCounter--;
