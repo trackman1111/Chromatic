@@ -184,6 +184,7 @@ GameObject:
   - component: {fileID: 8418944293887796427}
   - component: {fileID: 8418944293887796437}
   - component: {fileID: 8418944293887796426}
+  - component: {fileID: 797647282140754731}
   - component: {fileID: 2844799007727373399}
   - component: {fileID: 4800509716208698066}
   - component: {fileID: 4800509716208698071}
@@ -203,7 +204,7 @@ Transform:
   m_GameObject: {fileID: 8418944293887796425}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 521.42, y: -6.95, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children:
   - {fileID: 4800509717309285622}
   - {fileID: 4800509717478602893}
@@ -251,7 +252,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 06af26392cea22944a74cf4e93c4dcb7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -282,9 +283,25 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!58 &8418944293887796426
 CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8418944293887796425}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 5
+--- !u!60 &797647282140754731
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -296,9 +313,43 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000000029802322, y: 0.08049396}
-  serializedVersion: 2
-  m_Radius: 0.41950604
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10, y: 10}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.08, y: -5}
+      - {x: -0.22, y: -3.75}
+      - {x: -0.53999996, y: -5}
+      - {x: -1.4599999, y: -5}
+      - {x: -1.55, y: -4.44}
+      - {x: -1.27, y: -2.95}
+      - {x: -1.1899999, y: -1.48}
+      - {x: -1.78, y: -0.06}
+      - {x: -1.4399999, y: 1}
+      - {x: -0.64, y: 1.5999999}
+      - {x: -1.1, y: 1.8}
+      - {x: -1.24, y: 2.81}
+      - {x: -0.79999995, y: 3.57}
+      - {x: 0.11, y: 3.6599998}
+      - {x: 0.82, y: 3.3}
+      - {x: 1.02, y: 2.56}
+      - {x: 0.83, y: 1.93}
+      - {x: 0.39999998, y: 1.54}
+      - {x: 0.91999996, y: 0.42999998}
+      - {x: 1.5, y: -0.28}
+      - {x: 1.4699999, y: -1.03}
+      - {x: 0.95, y: -1.3199999}
+      - {x: 0.47, y: -0.88}
+      - {x: 0.9, y: -2.82}
+      - {x: 1.04, y: -5}
 --- !u!114 &2844799007727373399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,3 +402,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   immunityTimer: 2
+  startpos: {x: 0, y: 0, z: 0}
