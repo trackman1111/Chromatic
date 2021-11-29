@@ -18,6 +18,7 @@ public class Movement : MonoBehaviour
     public Tilemap background;
     private Vector2 move;
     private ScriptableObject jump;
+    private Animator am;
 
 
     // Start is called before the first frame update
@@ -26,6 +27,7 @@ public class Movement : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         gravscale = rb.gravityScale;
         climbing = false;
+        am = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -47,6 +49,11 @@ public class Movement : MonoBehaviour
         {
             // Calls FeetCollider.cs and allows double jump.
             this.transform.GetChild(0).GetComponent<FeetCollider>().DoubleJump();
+            am.SetInteger("Current", 1);
+        }
+        else
+        {
+            am.SetInteger("Current", 0);
         }
         
         if (currentSprite != null && currentSprite.Equals(vine) && !climbing)
