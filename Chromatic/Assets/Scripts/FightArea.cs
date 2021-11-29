@@ -19,6 +19,11 @@ public class FightArea : MonoBehaviour
     private void Update()
     {
 
+        if (Done == true && GameObject.Find("MainCharacter").GetComponent<Movement>().KillsForUnfreeze == enemies.Count)
+        {
+            gameObject.GetComponent<FreezeCam>().UnFreeze();
+        }
+
         /*if (Done && Finished == false)
         {
             //Runs the unfreezing script from the FreezeCam (THIS SCRIPT MUST BE Attached to the same object as the FreezeCam script for this to work!)
@@ -42,6 +47,7 @@ public class FightArea : MonoBehaviour
                 Instantiate(element, spawnpoints[i].transform);
                 
             }
+            GameObject.Find("MainCharacter").GetComponent<Movement>().KillsForUnfreeze = 0;
             Done = true;
         }
     }

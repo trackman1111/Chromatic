@@ -19,6 +19,7 @@ public class Movement : MonoBehaviour
     private Vector2 move;
     private ScriptableObject jump;
     private Animator am;
+    public int KillsForUnfreeze;
 
 
     // Start is called before the first frame update
