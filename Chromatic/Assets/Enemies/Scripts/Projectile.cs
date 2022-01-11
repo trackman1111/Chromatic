@@ -7,10 +7,10 @@ public class Projectile : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag 
-        == gameObject.tag)
+        != gameObject.tag)
         {
-            return;
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
+        
     }
 }

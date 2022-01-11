@@ -38,19 +38,25 @@ public class Movement : MonoBehaviour
         Sprite currentSprite = background.GetSprite(new Vector3Int((int)(transform.position.x), (int)transform.position.y, 0));
         float xSpeed = Input.GetAxis("Horizontal");
         float ySpeed = Input.GetAxis("Vertical");
+        
+        
 
         // if the A key was pressed this frame
         if (Input.GetKeyDown(KeyCode.A))
         {
             sr.flipX = true;
+            am.SetInteger("Current", 0);
         }
-
-        // if the A key was pressed this frame
-        if (Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetKeyDown(KeyCode.D))
         {
 
             sr.flipX = false;
+            am.SetInteger("Current", 0);
 
+        }
+        else if (xSpeed == 0 && ySpeed == 0)
+        {
+            am.SetInteger("Current", 3);
         }
 
 
@@ -72,7 +78,7 @@ public class Movement : MonoBehaviour
             climbing = true;
             rb.gravityScale = 0;
             rb.velocity = new Vector2(0, 0);
-            am.SetInteger("Current", 0);
+            am.SetInteger("Current", 2);
         }
         else if (climbing && (currentSprite == null || !currentSprite.Equals(vine)))
         {

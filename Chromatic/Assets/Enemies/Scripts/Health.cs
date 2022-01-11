@@ -62,7 +62,6 @@ public class Health : MonoBehaviour
 
         if (health <= 0 && tag != "Player")
         {
-            GameObject.Find("MainCharacter").GetComponent<Movement>().KillsForUnfreeze += 1;
             Destroy(gameObject);
             
         }
