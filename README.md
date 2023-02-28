@@ -1,4 +1,1 @@
 # Chromatic
-#Sam
-#Jackson
-#Brenden
